@@ -1,0 +1,1 @@
+json.array! @confers, partial: 'confers/confer', as: :confer

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Confers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Subject</th>
+      <th>Country</th>
+      <th>Img</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @confers.each do |confer| %>
+      <tr>
+        <td><%= confer.name %></td>
+        <td><%= confer.description %></td>
+        <td><%= confer.link %></td>
+        <td><%= confer.start_time.strftime("%Y %m %d") %></td>
+        <td><%= confer.end_time.strftime("%Y %m %d") %></td>
+        <td><%= confer.subject.name %></td>
+        <td><%= confer.country.name %></td>
+        <td><%= confer.img %></td>
+        <td><%= confer.location %></td>
+        <td><%= link_to 'Show', confer %></td>
+        <td><%= link_to 'Edit', edit_confer_path(confer) %></td>
+        <td><%= link_to 'Destroy', confer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Confer', new_confer_path %>

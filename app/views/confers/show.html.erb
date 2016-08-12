@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @confer.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @confer.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @confer.link %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @confer.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @confer.end_time %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <%= @confer.img %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @confer.location %>
+</p>
+
+<%= link_to 'Edit', edit_confer_path(@confer) %> |
+<%= link_to 'Back', confers_path %>

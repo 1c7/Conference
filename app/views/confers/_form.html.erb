@@ -1,0 +1,63 @@
+<%= form_for(confer) do |f| %>
+  <% if confer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(confer.errors.count, "error") %> prohibited this confer from being saved:</h2>
+
+      <ul>
+      <% confer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :subject %>
+    <%= select_tag "confer[subject_id]",
+        options_from_collection_for_select(@subjects, "id", "name"), :id => "confer_subject" %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.date_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.date_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= select_tag "confer[country_id]",
+        options_from_collection_for_select(@countries, "id", "name"), :id => "confer_country" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

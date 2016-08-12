@@ -1,0 +1,1 @@
+json.partial! "confers/confer", confer: @confer

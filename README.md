@@ -5,6 +5,8 @@ Ruby version: 2.3.0
 
 
 
-
+```
+rake db:seed:dump
+```
 
 
